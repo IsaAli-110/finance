@@ -10,15 +10,17 @@ if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, 'w') as f:
         json.dump([], f)
 
-@app.route('/')
-def dashboard():
-    return render_template('index.html')
+
 
 @app.route('/')
 def index():
     if 'user' not in session:
         return redirect(url_for('login'))
     return render_template('index.html')
+
+@app.route('/')
+def dashboard():
+    return render_template('dashboard.html')
 
 @app.route('/api/data')
 def api_data():
