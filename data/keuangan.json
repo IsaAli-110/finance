@@ -1,0 +1,56 @@
+[
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "ikan yeye",
+        "jumlah": 121212,
+        "tipe": "pengeluaran"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "ikan bandeng",
+        "jumlah": 1000,
+        "tipe": "pemasukan"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "gurameh cebol",
+        "jumlah": 90000,
+        "tipe": "pengeluaran"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "beli ikan",
+        "jumlah": 12333333,
+        "tipe": "pemasukan"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "beli",
+        "jumlah": 10000,
+        "tipe": "pemasukan"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "de",
+        "jumlah": 2112121,
+        "tipe": "pemasukan"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "bayar utang ",
+        "jumlah": 14245242,
+        "tipe": "pengeluaran"
+    },
+    {
+        "tanggal": "2025-06-15",
+        "keterangan": "w2w",
+        "jumlah": 10000000,
+        "tipe": "pemasukan"
+    },
+    {
+        "tanggal": "2025-07-10",
+        "keterangan": "beli",
+        "jumlah": 70000,
+        "tipe": "pengeluaran"
+    }
+]
