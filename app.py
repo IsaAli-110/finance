@@ -18,7 +18,7 @@ def index():
         return redirect(url_for('login'))
     return render_template('index.html')
 
-@app.route('/')
+@app.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
 
