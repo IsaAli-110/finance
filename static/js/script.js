@@ -1,8 +1,7 @@
 function loadData() {
-  fetch("/api/data")
+  fetch("/api/laporan")
     .then((res) => res.json())
-    .then((response) => {
-      const data = response.data;
+    .then((data) => {
       const tbody = document.getElementById("tabel-data");
       const saldoElemen = document.getElementById("saldo");
       let rows = "";
@@ -24,32 +23,32 @@ function loadData() {
       });
 
       tbody.innerHTML = rows;
-      saldoElemen.innerText = `Rp ${saldo.toLocaleString()}`;
+      saldoElemen.innerText = `Saldo: Rp ${saldo.toLocaleString()}`;
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   loadData();
 
-  const form = document.getElementById('form-tambah');
-  form.addEventListener('submit', (e) => {
+  const form = document.getElementById("form-tambah");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    fetch('/api/tambah', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+    fetch("/api/laporan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(res => {
-      if (res.status === "sukses") {
-        form.reset();
-        loadData(); // Refresh tabel
-      } else {
-        alert("Gagal menyimpan data.");
-      }
-    });
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === "sukses") {
+          form.reset();
+          loadData();
+        } else {
+          alert("Gagal menyimpan data.");
+        }
+      });
+  });
 });
-})

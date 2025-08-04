@@ -1,94 +1,10 @@
 {% extends "layout.html" %}
 
-{% block content %}Data Kategori
+{% block title %}Beranda{% endblock %}
 
-
-<!-- <div class="dashboard-header">
-  <h1>Dashboard</h1>
-</div> -->
-<!-- <div class="cards-container">
-    </div class="card green">Pemasukan Hari Ini <br><b>Rp. 0</b></div>
-    </div class="card blue">Pemasukan Bulan Ini <br><b>Rp. 0</b></div>
-    </div class="card orange">Pemasukan Tahun Ini <br><b>Rp. 0</b></div>
-    </div class="card black">Seluruh Pemasukan <br><b>Rp. 0</b></div>
-
-    </div class="card black">Pengeluaran Hari Ini  <br><b>Rp. 0</b></div>
-    </div class="card black">Pengeluaran Bulan Ini <br><b>Rp. 0</b></div>
-    </div class="card black">Pengeluaran Tahun Ini <br><b>Rp. 0</b></div>
-    </div class="card black">Seluruh Pengeluaran <br><b>Rp. 0</b></div>
+{% block content %}
+<div class="content">
+  <h1>Selamat Datang di Aplikasi Keuangan</h1>
+  <p>Gunakan menu di sebelah kiri untuk mulai mencatat transaksi Anda.</p>
 </div>
-
-<canvas id="grafikKeuangan" width="800" height="400"></canvas>
-
-<div class="calendar">
-  <h3>Kalender</h3>
-    <div id="calendar"></div>
-</div> -->
-
-
-<h2>Dashboard Keuangan</h2>
-<p>Total Saldo: <strong id="saldo">Memuat...</strong></p>
-
-<table border="1">
-  <thead>
-    <tr>
-      <th>Tanggal</th>
-      <th>Keterangan</th>
-      <th>Jumlah</th>
-      <th>Tipe</th>
-    </tr>
-  </thead>
-  <tbody id="tabel-data"></tbody>
-</table>
-
-<h3>Tambah Transaksi</h3>
-<form id="form-tambah" method="post" action="/api/tambah">
-  <input
-    type="text"
-    name="keterangan"
-    placeholder="Keterangan"
-    required
-  /><br /><br />
-  <input
-    type="number"
-    name="jumlah"
-    placeholder="Jumlah"
-    required
-  /><br /><br />
-  <select name="tipe">
-    <option value="pemasukan">Pemasukan</option>
-    <option value="pengeluaran">Pengeluaran</option></select
-  ><br /><br />
-  <button type="submit">Simpan</button>
-</form>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  fetch('/api/transaksi')
-    .then(response => response.json())
-    .then(data => {
-      const tableBody = document.querySelector("table tbody");
-      tableBody.innerHTML = ""; // bersihkan isi tabel dulu
-
-      let totalSaldo = 0;
-
-      data.forEach(item => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${item.tanggal}</td>
-          <td>${item.keterangan}</td>
-          <td>${item.jumlah}</td>
-          <td>${item.tipe}</td>
-        `;
-        tableBody.appendChild(row);
-
-        // Hitung saldo
-        totalSaldo += item.tipe === "masuk" ? item.jumlah : -item.jumlah;
-      });
-
-      document.getElementById("saldo").textContent = totalSaldo;
-    });
-});
-</script>
-{% endblock %}
+  {% endblock %}

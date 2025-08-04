@@ -1,0 +1,29 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Aplikasi Keuangan{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+                <h2>DARUL HASANAIN</h2>
+                <a href="{{ url_for('index') }}">Dashboard</a>
+                <a href="{{ url_for('data_transaksi') }}">Data Transaksi</a>
+                <a href="{{ url_for('laporan') }}">Laporan</a>  <!-- Ini yang penting -->
+                <a href="#">Pengguna</a>
+                <a href="#">Ganti Password</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

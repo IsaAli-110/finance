@@ -1,0 +1,10 @@
+<!-- templates/partials/sidebar.html -->
+<div class="sidebar">
+  <h2>DARUL HASANAIN</h2>
+  <a href="{{ url_for('index') }}">Dashboard</a>
+  <a href="{{ url_for('data_transaksi') }}">Data Transaksi</a>
+  <a href="{{ url_for('laporan') }}">Laporan</a>  <!-- Ini yang penting -->
+  <a href="#">Pengguna</a>
+  <a href="#">Ganti Password</a>
+  <a href="{{ url_for('logout') }}">Logout</a>
+</div>

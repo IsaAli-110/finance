@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Tambah Transaksi</h2>
+<form id="form-tambah">
+  <label>Keterangan:</label>
+  <input type="text" name="keterangan" required>
+
+  <label>Jumlah:</label>
+  <input type="number" name="jumlah" required>
+
+  <label>Tipe:</label>
+  <select name="tipe" required>
+    <option value="pemasukan">Pemasukan</option>
+    <option value="pengeluaran">Pengeluaran</option>
+  </select>
+
+  <button type="submit">Tambah</button>
+</form>
+
+<h3 id="saldo">Saldo: Rp 0</h3>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Tanggal</th>
+      <th>Keterangan</th>
+      <th>Jumlah</th>
+      <th>Tipe</th>
+    </tr>
+  </thead>
+  <tbody id="tabel-data"></tbody>
+</table>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

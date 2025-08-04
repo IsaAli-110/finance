@@ -1,138 +1,55 @@
 /* style.css */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #74ebd5, #ACB6E5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.login-container {
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 350px;
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  background-color: #1f1f1f;
+  padding: 20px;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #333;
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
+.sidebar a:hover {
+  background-color: #333;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+.content {
+  margin-left: 300px;
+  padding: 20px;
 }
 
-button:hover {
-    background-color: #45a049;
+.card {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
 }
 
-
-/* ========= DASHBOARD STYLING ========= */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    margin: 0;
-    padding: 0;
+.card h2 {
+  margin: 0;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 24px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.card p {
+  font-size: 0.9em;
+  color: #dcdcdc;
 }
 
-main {
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 50px;
 }
-
-#saldo {
-    font-size: 24px;
-    color: #4CAF50;
-    font-weight: bold;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: white;
-}
-
-table th,
-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-}
-
-table tr:nth-child(even) {
-    background-color: #fafafa;
-}
-
-form {
-    margin-top: 30px;
-}
-
-form input,
-form select {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-form button {
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-form button:hover {
-    background-color: #45a049;}

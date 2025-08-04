@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Laporan Keuangan{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h3>Laporan Transaksi</h3>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Keterangan</th>
+        <th>Jumlah</th>
+        <th>Tipe</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% set total = 0 %}
+      {% for item in daftar_transaksi %}
+        <tr>
+          <td>{{ item.tanggal }}</td>
+          <td>{{ item.keterangan }}</td>
+          <td>{{ item.jumlah }}</td>
+          <td>{{ item.tipe }}</td>
+        </tr>
+        {% if item.tipe == "masuk" %}
+          {% set total = total + item.jumlah %}
+        {% else %}
+          {% set total = total - item.jumlah %}
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h4>Total Saldo: {{ total }}</h4>
+</div>
+{% endblock %}
