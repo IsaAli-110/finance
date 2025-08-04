@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends 'base.html' %}
 
 {% block title %}Laporan Keuangan{% endblock %}
 
@@ -6,33 +6,40 @@
 <div class="content">
   <h3>Laporan Transaksi</h3>
 
-  <table border="1">
+    <table border="1">
     <thead>
       <tr>
-        <th>Tanggal</th>
-        <th>Keterangan</th>
-        <th>Jumlah</th>
-        <th>Tipe</th>
+        <th rowspan="2">NO</th>
+        <th rowspan="2">TANGGAL</th>
+        <th rowspan="2">KETERANGAN</th>
+        <th colspan="2">JENIS</th>
+      </tr>
+      <tr>
+        <th>PEMASUKAN</th>
+        <th>PENGELUARAN</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tabel-data">
       {% set total = 0 %}
       {% for item in daftar_transaksi %}
         <tr>
+          <td>{{ loop.index}}</td>
           <td>{{ item.tanggal }}</td>
-          <td>{{ item.keterangan }}</td>
-          <td>{{ item.jumlah }}</td>
-          <td>{{ item.tipe }}</td>
-        </tr>
-        {% if item.tipe == "masuk" %}
+          <td>{{ item.keterangan }}</td>          
+        {% if item.tipe == "pemasukan" %}
+          <td>Rp {{ "{:,.0f}".format(item.jumlah) }}</td>
+          <td></td>
           {% set total = total + item.jumlah %}
         {% else %}
+          <td></td>
+          <td>Rp {{ "{:,.0f}".format(item.jumlah) }}</td>
           {% set total = total - item.jumlah %}
-        {% endif %}
+        {% endif %}  
       {% endfor %}
     </tbody>
   </table>
 
-  <h4>Total Saldo: {{ total }}</h4>
+  <h3 id="saldo">Total Saldo: Rp {{ total }}</h3>
 </div>
+
 {% endblock %}

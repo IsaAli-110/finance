@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="container-box">
 <h2>Tambah Transaksi</h2>
 <form id="form-tambah">
   <label>Keterangan:</label>
@@ -19,18 +20,23 @@
 </form>
 
 <h3 id="saldo">Saldo: Rp 0</h3>
+</div>
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>Tanggal</th>
-      <th>Keterangan</th>
-      <th>Jumlah</th>
-      <th>Tipe</th>
-    </tr>
-  </thead>
-  <tbody id="tabel-data"></tbody>
-</table>
+<div class="content1">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Keterangan</th>
+          <th>Jumlah</th>
+          <th>Tipe</th>
+        </tr>
+      </thead>
+      <tbody id="tabel-data"></tbody>
+    </table>
+</div>
+  
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
+   

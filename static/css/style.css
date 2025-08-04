@@ -7,8 +7,8 @@ body {
 }
 
 .sidebar {
-  width: 220px;
-  height: 100vh;
+  width: 230px;
+  height: 90vh;
   position: fixed;
   background-color: #1f1f1f;
   padding: 20px;
@@ -26,8 +26,12 @@ body {
   background-color: #333;
 }
 
+.content1 {
+  margin-left: 290px;
+}
+
 .content {
-  margin-left: 300px;
+  margin-left: 140px;
   padding: 20px;
 }
 
@@ -52,4 +56,60 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+
+/* Container utama */
+.container-box {
+  max-width: 890px; /* Membuat form lebih ramping */
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  color: #333;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Judul form */
+.container-box h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.6rem; /* Ukuran lebih kecil */
+  color: #222;
+}
+
+/* Form input */
+form#form-tambah {
+  display: flex;
+  justify-content: space-between; /* Menjaga elemen sejajar */
+  gap: 20px; /* Menambah jarak antar elemen */
+  margin-bottom: 20px;
+}
+
+form#form-tambah .form-group {
+  flex: 1; /* Memberikan ruang yang sama untuk semua elemen */
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Jarak antara label dan input lebih kecil */
+}
+
+form#form-tambah label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem; /* Ukuran label lebih kecil */
+}
+
+form#form-tambah input,
+form#form-tambah select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }

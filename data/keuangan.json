@@ -88,5 +88,11 @@
         "keterangan": "123",
         "jumlah": 87766876655,
         "tipe": "pemasukan"
+    },
+    {
+        "tanggal": "2025-08-04",
+        "keterangan": "beli",
+        "jumlah": 1000000,
+        "tipe": "pemasukan"
     }
 ]
